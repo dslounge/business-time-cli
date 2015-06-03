@@ -3,13 +3,11 @@
 import json
 import urllib2
 import sys
-
-endpoint = "http://businesstime.localytics.com/api?v=1"
+import yaml
 
 #for checking if a row of data belongs to men's or women's bathroom
 menIdent = "Men's Room"
-womenIdent = "Women's Room"
-	
+womenIdent = "Women's Room"	
 
 #for printing stuff out
 class line:
@@ -50,6 +48,10 @@ def printBathroom(b):
 	printFunction = printByStatus.get(status, line.warn)(name + ": " + status)	
 
 try: 
+	# load url endpoint	
+	with open("config.yml", 'r') as ymlfile:
+		cfg = yaml.load(ymlfile)
+		endpoint = cfg['business-time']['api-url']
 
 	# load data
 	allData = json.load(urllib2.urlopen(endpoint))	
@@ -82,9 +84,4 @@ except urllib2.HTTPError, e:
 except urllib2.URLError, e:
     line.fail("failed to load url: " + endpoint)
 except ValueError:  # includes simplejson.decoder.JSONDecodeError
-    line.fail('Decoding JSON has failed :(')
-
-
-
-
-
+    line.fail('Decoding JSON has failed :(')    	
