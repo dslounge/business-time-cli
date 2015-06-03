@@ -45,7 +45,7 @@ printByStatus = {"open": line.ok, "closed": line.fail}
 def printBathroom(b):
 	name = b['name']
 	status = b['value']
-	printFunction = printByStatus.get(status, line.warn)(name + ": " + status)	
+	printByStatus.get(status, line.warn)(name + ": " + status)	
 
 try: 
 	# load url endpoint	
