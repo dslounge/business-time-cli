@@ -13,7 +13,7 @@ sudo pip install pyyaml
 
 2. Clone this repo
 
-3. Copy `config.yml.sample` to `config.yml` and edit the `api-url` key to point to the business-time url
+3. Copy `config.yml.sample` to `config.yml` and edit the `api-url` key to point to the business-time api url
 
 4. Make sure it's executable by running `chmod u+x business-time.py`
 
