@@ -1,6 +1,6 @@
 # business-time-cli
 
-This is an elegant business-time cli for a more civilized age, writen in Python. For more information, visit https://github.com/trisweb/business-time
+An elegant business-time weapon for a more civilized age, writen in Python. For more information, visit https://github.com/trisweb/business-time
 
 ### Installation
 
